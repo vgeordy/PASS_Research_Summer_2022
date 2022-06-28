@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import useEth from "../../contexts/EthContext/useEth";
 import Title from "./Title";
 import AccountInformation from "./AccountInformation";
@@ -10,9 +10,10 @@ import NoticeWrongNetwork from "./NoticeWrongNetwork";
 import NoticeNoAccount from "./NoticeNoAccount";
 import Certification from "./Certification";
 import CreateHPAForm from "./CreateHPAForm";
+import HPARetrieval from "./HPARetrieval";
 
 function Demo() {
-  const { state } = useEth();
+  const { state, contract, accounts } = useEth();
   const [value, setValue] = useState("?");
   const [wid, setWid] = useState('');
   const [lastName, setLastName] = useState('');
@@ -20,6 +21,16 @@ function Demo() {
   const [paType, setPaType] = useState("");
   const [isSigned, setIsSigned] = useState(false);
   
+  // const [hpas, setHpas] = useState([]);
+
+  // const addToArray = useCallback(() => {
+  //   const hpasCount = contract.simple_hpas_count;
+  //     const hpas = [];
+  //     for(var i = 0; i < hpasCount; i++) {
+  //         const hpa = contract.simple_hpas(accounts[0], i);
+  //         hpas.push(hpa);
+  //     }
+  // },[hpas]);
 
   /*
         uint256 paID;
@@ -42,9 +53,9 @@ function Demo() {
         signature={signature}
         setSignature={setSignature}
       />
-      <div className="contract-container">
+      {/* <div className="contract-container">
        {/* <Contract value={value} /> */}
-        {/* <ContractBtns setValue={setValue} /> */}
+        {/* <ContractBtns setValue={setValue} /> */} 
         <CreateHPAForm
           paType={paType}
           setPaType={setPaType}
@@ -52,7 +63,7 @@ function Demo() {
           setIsSigned={setIsSigned}
           signature={signature}
            />
-      </div>
+          <HPARetrieval/>
       
     </>;
 

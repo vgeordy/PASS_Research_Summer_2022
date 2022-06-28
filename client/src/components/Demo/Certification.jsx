@@ -13,9 +13,9 @@ const Certification = ({wid, setWid, lastName, setLastName, signature, setSignat
         lastName: lastName,
       };
 
-      axios.get('http://localhost:3001/certification/')
+      axios.get('http://localhost:3001/certification/',req)
       .then(response => {
-          //const parsedResponse = JSON.parse(response);
+          console.log(response);
           const sigresponse = response.data[0].signature;
           setSignature(sigresponse);
       }).catch(function (error) {

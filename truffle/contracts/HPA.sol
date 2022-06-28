@@ -22,6 +22,7 @@ contract HPA  {
     // gives each structure a unique ID
     mapping (address => mapping(uint => PA)) public certified_hpas;
     mapping (address => uint) public hpas_count;
+    
     mapping (address => mapping(uint => SimplePA)) public simple_hpas;
     mapping (address => uint) public simple_hpas_count;
     // constructor is only called once
@@ -54,5 +55,6 @@ contract HPA  {
             simple_hpas_count[msg.sender]++;
         }
 
+   
 }
 
