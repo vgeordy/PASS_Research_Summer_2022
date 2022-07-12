@@ -17,11 +17,13 @@ return (
       <div id="App" >
         <div className="container">
        
-          <Demo />
+          <Demo/>
         </div>
       </div>
     </EthProvider>
-  );
+    
+  
+    );
 }
 
 export default App;
