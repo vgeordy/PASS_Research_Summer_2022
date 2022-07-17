@@ -12,6 +12,9 @@ contract HPA  {
 
 
      struct SimplePA {
+        uint id;
+        string firstName;
+        string subject;
         string signature;
     }
 
@@ -48,9 +51,9 @@ contract HPA  {
        hpas_count[msg.sender]++;
     }
 
-    function createSimpleHPA(string memory signature) public {
+    function createSimpleHPA(uint256 id, string memory firstName, string memory subject, string memory signature) public {
             uint simple_hpa_count = simple_hpas_count[msg.sender];
-            simple_hpas[msg.sender][simple_hpa_count] = SimplePA(signature);
+            simple_hpas[msg.sender][simple_hpa_count] = SimplePA(id, firstName, subject, signature);
             emit Certified(msg.sender);
             simple_hpas_count[msg.sender]++;
         }

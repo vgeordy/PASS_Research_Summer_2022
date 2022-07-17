@@ -13,11 +13,10 @@ const Certification = ({wid, setWid, lastName, setLastName, signature, setSignat
         lastName: lastName,
       };
 
-      axios.get('http://localhost:3001/certification/',req)
+      axios.get('http://localhost:3004/institutions',req)
       .then(response => {
-          console.log(response);
-          const sigresponse = response.data[0].signature;
-          setSignature(sigresponse);
+          console.log("response data", response.data.certificate)
+          setSignature(response.data.certificate);
       }).catch(function (error) {
               console.log(error);
       });
@@ -57,11 +56,9 @@ const Certification = ({wid, setWid, lastName, setLastName, signature, setSignat
       value="Send Request"
       />
     </form>
-      {
-        !signature ? <h2>not signed</h2> : <h2>returned signature is {signature}</h2>
-      // fix the line above
       
-      }
+    <h2>returned signature is {signature}</h2>
+      
     </div>
     );
   }

@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useEffect, useCallback } from "react";
 import useEth from "../../contexts/EthContext/useEth";
 import Title from "./Title";
 import AccountInformation from "./AccountInformation";
@@ -9,9 +9,10 @@ import NoticeNoArtifact from "./NoticeNoArtifact";
 import NoticeWrongNetwork from "./NoticeWrongNetwork";
 import NoticeNoAccount from "./NoticeNoAccount";
 import Certification from "./Certification";
-import CreateHPAForm from "./CreateHPAForm";
-import HPARetrieval from "./HPARetrieval";
+//import CreateHPAForm from "../PACreation/CreateHPAForm";
 import PACreation from "../PACreation";
+import PALookup from "../PALookup";
+
 
 function Demo() {
 
@@ -19,40 +20,20 @@ function Demo() {
   const [value, setValue] = useState("?");
   const [wid, setWid] = useState('');
   const [lastName, setLastName] = useState('');
-  const [signature, setSignature] = useState('sdfs');
+  const [signature, setSignature] = useState('');
   const [paType, setPaType] = useState("");
   const [isSigned, setIsSigned] = useState(false);
   
-
+  useEffect(() => {
+    console.log(signature);
+  }, [signature])
+  
   const demo =
     <>
-    
-    <PACreation />
-      <AccountInformation 
-              accountAddress={state.accounts}
-      
-      />
-      <Certification
-        wid={wid}
-        setWid={setWid}
-        lastName={lastName}
-        setLastName={setLastName} 
-        signature={signature}
-        setSignature={setSignature}
-      />
-      {/* <div className="contract-container">
-       {/* <Contract value={value} /> */}
-        {/* <ContractBtns setValue={setValue} /> */} 
-        <CreateHPAForm
-          paType={paType}
-          setPaType={setPaType}
-          isSigned={isSigned}
-          setIsSigned={setIsSigned}
-          signature={signature}
-           />
-          <HPARetrieval/>
-      
-    </>;
+      <AccountInformation accountAddress={state.accounts}/>
+      <PACreation/>
+      <PALookup/>
+    </>
 
   return (
     <div className="demo">

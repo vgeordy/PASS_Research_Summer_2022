@@ -22,7 +22,7 @@ const Redirect = ({url}) => {
 }
 
 
-const Requester = () => {
+export const Requester = () => {
 
   const [url, setUrl] = useState("");
 
@@ -51,5 +51,3 @@ const Requester = () => {
 
   )
 }
-
-export default Requester
