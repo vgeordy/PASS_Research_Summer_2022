@@ -12,7 +12,11 @@ import Certification from "./Certification";
 //import CreateHPAForm from "../PACreation/CreateHPAForm";
 import PACreation from "../PACreation";
 import PALookup from "../PALookup";
-
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from "react-router-dom";
 
 function Demo() {
 
@@ -30,9 +34,15 @@ function Demo() {
   
   const demo =
     <>
-      <AccountInformation accountAddress={state.accounts}/>
-      <PACreation/>
-      <PALookup/>
+        <Router>
+          <Routes>
+            <Route path="/" element={<AccountInformation accountAddress={state.accounts}/>}/>
+            <Route path="/PACreation" element={<PACreation/>}/>
+            <Route path="/PALookup" element={<PALookup/>}/>
+          </Routes>
+        </Router>
+         
+      
     </>
 
   return (

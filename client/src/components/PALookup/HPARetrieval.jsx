@@ -5,8 +5,8 @@ const HPAs = (props) => {
   console.log("HPAS at HPA component", props.hpas);
     return (
       <ul>
-      { props.hpas.map(({firstName, subject, signature}) => 
-          <li key={firstName}>HPA: {firstName} {subject} {signature}</li>
+      { props.hpas.map(({id, firstName, subject, signature}) => 
+          <li key={id}>HPA: {firstName} {subject} {signature}</li>
       )}
      </ul>
     )
@@ -31,10 +31,10 @@ export const HPARetrieval = () => {
             
         }
 
-        const values = hpaObjectArray.filter((index) => {
-                return index < 3;
+        // const values = hpaObjectArray.filter((index) => {
+        //         return index < 3;
           
-        })
+        // })
 
       return hpaObjectArray;
 }
@@ -59,9 +59,9 @@ const handleClick = () => {
 
 return (
     <div>
-        <h2>HPARetrieval</h2>
+        <h2>Please click to see your vertified Portfolio Artificat</h2>
         <button onClick={handleClick}>Click</button>
-        {hpas.length > 0 ? <HPAs hpas={hpas}/>: <h2>hpas length less than 0</h2>}
+        {hpas.length > 0 ? <HPAs hpas={hpas}/>: null}
     </div>
   )
 }

@@ -16,7 +16,6 @@ return (
     <EthProvider>
       <div id="App" >
         <div className="container">
-       
           <Demo/>
         </div>
       </div>

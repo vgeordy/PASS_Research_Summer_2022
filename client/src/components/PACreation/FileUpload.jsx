@@ -3,7 +3,7 @@ import {PAContext} from '../../contexts/PAContext';
 
 export const FileUpload = () => {
     
-  const {setFirstName, setSubject, setDigitalSignature} = useContext(PAContext);
+  const {setID, setFirstName, setSubject, setDigitalSignature} = useContext(PAContext);
 
   const [file, setFile] = useState();
     useEffect(() => {
@@ -29,6 +29,7 @@ export const FileUpload = () => {
     const object = JSON.parse(event.target.result);
     console.log("JSON",object);
     setFile(object);
+    setID(object.id);
     setFirstName(object.firstName.toString());
     setSubject(object.subject.toString());
     setDigitalSignature(object.digitalSignature.toString());
