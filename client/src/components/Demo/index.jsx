@@ -11,7 +11,7 @@ import NoticeNoAccount from "./NoticeNoAccount";
 import Certification from "./Certification";
 //import CreateHPAForm from "../PACreation/CreateHPAForm";
 import PACreation from "../PACreation";
-import PALookup from "../PALookup";
+import PARetrieval from "../PARetrieval";
 import {
   BrowserRouter as Router,
   Routes,
@@ -38,7 +38,7 @@ function Demo() {
           <Routes>
             <Route path="/" element={<AccountInformation accountAddress={state.accounts}/>}/>
             <Route path="/PACreation" element={<PACreation/>}/>
-            <Route path="/PALookup" element={<PALookup/>}/>
+            <Route path="/PAretrieval" element={<PARetrieval/>}/>
           </Routes>
         </Router>
          

@@ -10,9 +10,7 @@ export const Requester = () => {
   const [selectedInstitution, setSelectedInstituion] = useState('');
 
   const options = [
-    { value: 'http://localhost:3004/institutions/mercycollege', label: 'Mercy College'},
-    { value: 'http://localhost:3004/institutions/UIUC', label: 'University Of Illinois' },
-    { value: 'http://localhost:3004/institutions/DMV', label: 'DMV' }
+    { value: 'http://localhost:3004/institutions/mercycollege', label: 'Mercy College'}
   ]
 
   const handleChange = (selectedOption) => {
@@ -52,7 +50,7 @@ const Redirect = ({url, selectedInstitution}) => {
       value="Redirect"
       onClick={redirec}
       /> */}
-      <a href={url}>Click to be redirected to {selectedInstitution}</a>
+      <a target="_blank" rel="noopener noreferrer"  href={url}>Click to be redirected to {selectedInstitution}</a>
     </div>
   )
 

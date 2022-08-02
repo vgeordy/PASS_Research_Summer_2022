@@ -1,7 +1,7 @@
 import React from 'react'
 import {HPARetrieval} from './HPARetrieval';
 
-const PALookup = () => {
+const PARetieval = () => {
   return (
     <div>
         <HPARetrieval/>
@@ -9,4 +9,4 @@ const PALookup = () => {
   )
 }
 
-export default PALookup;
+export default PARetieval;

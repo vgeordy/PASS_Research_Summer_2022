@@ -1,12 +1,16 @@
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faPlus} from '@fortawesome/free-solid-svg-icons';
 import React, {useEffect, useState, useContext} from 'react'
-import {PAContext} from '../../contexts/PAContext';
+import {PAContext} from '../../../contexts/PAContext';
+import { UploadContainer, InputWrapper, UploadInput, UploadButton } from './UploadHPAStyles';
 
-export const FileUpload = () => {
+export const UploadHPA = () => {
     
   const {setID, setFirstName, setSubject, setDigitalSignature} = useContext(PAContext);
 
   const [file, setFile] = useState();
-    useEffect(() => {
+    
+   useEffect(() => {
       console.log(file);
     },[file]);
 
@@ -38,13 +42,17 @@ export const FileUpload = () => {
 
 
   return (
-    <div>
-        <input type="file" accept=".json"
-        onChange={uploadFile} />
-        {file && file.map((f) => {
-          return <ul>{f.wid}, {f.firstName} {f.lastName}, {f.subject}, {f.digitalSignature} </ul>
-        })? <div>HPA: {file.wid}, {file.firstName} {file.lastName}, {file.subject}, {file.digitalSignature} </div>: null}
-    </div>
+    <UploadContainer>
+      <InputWrapper>
+        <UploadInput type="file" accept=".json" onChange={uploadFile} />
+        <UploadButton >
+          <i>
+            <FontAwesomeIcon icon={faPlus} />
+          </i>
+          Upload HPA
+        </UploadButton>
+      </InputWrapper>
+        {file ? <div>HPA: {file.wid}, {file.firstName} {file.lastName}, {file.subject}, {file.digitalSignature} </div>: null}
+    </UploadContainer>
   )
 }
-

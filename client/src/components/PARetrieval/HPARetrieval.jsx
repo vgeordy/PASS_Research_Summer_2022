@@ -6,7 +6,7 @@ const HPAs = (props) => {
     return (
       <ul>
       { props.hpas.map(({id, firstName, subject, signature}) => 
-          <li key={id}>HPA: {firstName} {subject} {signature}</li>
+          <li key={id}>HPA: {firstName}, {subject}, {signature}</li>
       )}
      </ul>
     )
@@ -23,10 +23,10 @@ export const HPARetrieval = () => {
 
     const loadHPAs = async () => {
         const hpaObjectArray = [];
-        const hpasCount = await contract.methods.simple_hpas_count(accounts[0]).call({ from: accounts[0]});
+        const hpasCount = await contract.methods.hpas_count(accounts[0]).call({ from: accounts[0]});
         
         for (var i = 0; i < hpasCount; i++) {
-            const hpa = await contract.methods.simple_hpas(accounts[0], i).call({ from: accounts[0]});
+            const hpa = await contract.methods.hpas(accounts[0], i).call({ from: accounts[0]});
            hpaObjectArray.push(hpa);
             
         }
@@ -59,8 +59,8 @@ const handleClick = () => {
 
 return (
     <div>
-        <h2>Please click to see your vertified Portfolio Artificat</h2>
-        <button onClick={handleClick}>Click</button>
+        <h2>Vertified Portfolio Artificats</h2>
+        <button onClick={handleClick}>List My Portfolio Artifacts</button>
         {hpas.length > 0 ? <HPAs hpas={hpas}/>: null}
     </div>
   )

@@ -1,8 +1,12 @@
 import { useState } from 'react';
-import {FileUpload} from './FileUpload';
 import {Requester} from './Requester';
-import {CreateHPAForm} from './CreateHPAForm';
+import {CreateHPA} from './CreateHPA';
+import { UploadHPA } from './UploadHPA';
 import {PAContext} from '../../contexts/PAContext';
+import { Container } from './PACreationStyles';
+import {SubmitHPA} from './SubmitHPA';
+// import { Container } from './PACreationStyles';
+// import {CreateHPA} from "./CreateHPA";
 
 const PACreation = () => {
 
@@ -14,10 +18,13 @@ const PACreation = () => {
 
   return (
     <>
-    <PAContext.Provider value={{id,setID, firstName, setFirstName, subject, setSubject, digitalSignature, setDigitalSignature}}>
-      <FileUpload/>
-      <Requester/>
-      <CreateHPAForm/>
+    <PAContext.Provider value={{id, setID, firstName, setFirstName, subject, setSubject, digitalSignature, setDigitalSignature}}>
+        <Container>
+          <UploadHPA/>
+        <SubmitHPA />
+        </Container>
+        
+        
     </PAContext.Provider>
     </>
   );
