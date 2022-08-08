@@ -1,12 +1,10 @@
-
-#pre- requisite(MUST INSTALL)
-Install  Node.js at https://nodejs.org/en/
-download Metamask extension at https://metamask.io
-download and install Ganache at https://trufflesuite.com/ganache/
-
 # Getting Started
 
 1. Clone the repo
+2. pre- requisite(MUST INSTALL)
+Install  Node.js at https://nodejs.org/en/
+download Metamask extension at https://metamask.io
+download and install Ganache at https://trufflesuite.com/ganache/
 
 ## Running Ganache 
 1. open ganache and create a new workspace
@@ -25,7 +23,7 @@ Chain ID: 1337
 Currency Symbol: ETH
 4. click save.
 
-## running the institution client(optional)
+## Running the institution client(optional)
 1. cd into /institution
 2. in the /institution - type npm install
 3. once everything is installed - type npm run devstart
