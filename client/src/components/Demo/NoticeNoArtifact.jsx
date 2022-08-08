@@ -1,8 +1,7 @@
 function NoticeNoArtifact() {
   return (
     <p>
-      ⚠️ Cannot find <span className="code">HPA</span> contract artifact.
-      Please complete the above preparation first, then restart the react dev server.
+      Please connect to the Ganache Ethereum network!
     </p>
   );
 }

@@ -48,6 +48,7 @@
   },
   "devDependencies": {
     "@mui/material": "^5.9.2",
-    "react-select": "^5.4.0"
+    "react-select": "^5.4.0",
+    "env-cmd": "^10.1.0"
   }
 }

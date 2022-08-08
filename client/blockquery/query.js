@@ -15,7 +15,6 @@ web3.eth.getTransactionCount(contractAddress, currentBlock).then((e) => {
   console.log("trx count n: ", e);
 });
 
-
 for (let i = currentBlock; i>=0; i--) { //&& (n > 0)
   try {
     if (block && block.transactions) {
