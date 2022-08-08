@@ -1,5 +1,5 @@
 
-#**pre- requisite(MUST INSTALL)**
+#pre- requisite(MUST INSTALL)
 Install  Node.js at https://nodejs.org/en/
 download Metamask extension at https://metamask.io
 download and install Ganache at https://trufflesuite.com/ganache/
